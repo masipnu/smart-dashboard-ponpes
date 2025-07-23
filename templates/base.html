@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="refresh" content="1"> -->
+  <title> {% block title %}{% endblock %} </title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+  <!-- Baground Gradient -->
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #e8f5e9, #ffffff);
+      min-height: 100vh;
+      margin: 0;
+    }
+  </style>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="static/css/leaflet.css" />
+  <!-- Map Style -->
+  <style>
+    #map {
+      height: 300px;
+      /* width: 100%; */
+    }
+  </style>
+
+</head>
+
+<body>
+
+    <!-- Kontainer utama -->
+    <div class="container-fluid p-3">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <!-- Bootstrap JS -->
+      <script src="static/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="static/js/leaflet.js"></script>
+
+    <!-- Skrip Load Peta -->
+    <script>
+      // Inisialisasi peta dan atur titik tengah serta zoom
+      var map = L.map('map').setView([-7.724927,111.476507], 12);
+
+      // Gunakan layer dari OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Tambahkan marker
+      L.marker([-7.724927,111.476507]).addTo(map)
+        .bindPopup('Pondok Pesantren Subulul Huda Madiun')
+        .openPopup();
+    </script>
+
+</body>
+</html> 

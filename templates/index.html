@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %} Dashboard {% endblock %}
+{% block content %}
+
+    <!-- Dashboard Title -->
+    <div class="row justify-content-center">
+        <div class="col-8 p-3 mb-3  ">
+            <p class="display-2 text-center"><b>Smart</b> Dashboard</p>
+            <p class="fs-4 text-center">Pondok Pesantren Subulul Huda | Rejosari Kebonsari Madiun</p>
+        </div>
+    </div>
+
+    <!-- main row -->
+    <div class="row justify-content-center gap-3">
+       
+        <!-- Left col -->
+        <div class="col-8">
+
+            <!-- Top Rows -->
+             <div class="row gap-3">
+                <div class="col bg-danger rounded shadow-sm">
+                    <p class="fs-2">08.00</p>
+                    <p>a.m.</p>
+                </div>
+                <div class="col bg-warning rounded shadow-sm">
+                    <p class="fs-2">Cerah</p>
+                    <p>Madiun</p>
+                </div>
+                <div class="col bg-success rounded shadow-sm">
+                    <p class="fs-2">{{ meter }}</p><span>kWh</span>
+
+                    {% if meter > 600 %}
+                    <h1>Bahaya</h1>
+                    {% else %}
+                    <h1>Aman</h1>
+                    {% endif %}
+
+                </div>
+                <div class="col bg-info rounded shadow-sm">
+                    <p class="fs-2">1000</p><span>lt</span>
+                </div>
+             </div>
+
+             <!-- Middle Row -->
+
+             <div class="col gap-3 mt-3">
+                <div class="row">
+                    <p class="fs-2">Informasi Santri</p>
+                </div>
+
+                <!-- Info -->
+                <div class="row gap-3 justify-content-center">
+                    <div class="col rounded bg-info shadow-sm">
+                        <p class="display-3">750</p>
+                        <p>Santri</p>
+                    </div>
+                    <div class="col rounded bg-info shadow-sm">
+                        <p class="display-3">725</p>
+                        <p>Mukim</p>
+                    </div>
+                    <div class="col rounded bg-info shadow-sm">
+                        <p class="display-3">10</p>
+                        <p>Izin Keluar</p>
+                    </div>
+                    <div class="col rounded bg-info shadow-sm">
+                        <p class="display-3">5</p>
+                        <p>Pulang</p>
+                    </div>
+                    <div class="col rounded bg-info shadow-sm">
+                        <p class="display-3">10</p>
+                        <p>Sakit</p>
+                    </div>
+                </div>
+
+                <!-- Descriptive Row -->
+                 <div class="row gap-4 mt-3">
+
+                    <!-- Kegiatan Sekarang -->
+                     <div class="col">
+                        <p class="fs-2">Kegiatan Saat Ini</p>
+                        <div class="row bg-light rounded shadow-sm p-1 border">
+                            <p class="fs-5">08.00 - 10.00</p>
+                           <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, aliquid hic asperiores qui veniam, quos commodi eum eaque sint perspiciatis officiis illo ullam totam accusantium aliquam assumenda corrupti ad nostrum.
+                           </p>
+                        </div>
+
+                        <!-- Agenda Bulan Ini -->
+                        <p class="fs-2">Agenda Bulan Ini</p>
+                        <div class="row bg-light rounded shadow-sm p-1 border">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus expedita dignissimos veritatis a magnam id ipsam nisi assumenda deleniti impedit ex nulla, commodi quasi maiores autem architecto tenetur eveniet minus.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Denah -->
+                    <div class="col">
+                        <div class="row">
+                            <p class="fs-2">Denah Pondok Pesantren</p>
+                            <div class="row bg-light rounded shadow-sm p-1">
+                                <div id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                 </div>
+             </div>
+        </div>
+
+        <!-- Right col -->
+        <div class="col-md-2 bg-light rounded shadow-sm border">
+            <p class="text-center fs-2">Kontrol</p>
+            <table class="table">
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+                <tr>
+                    <td>Lampu Teras</td>
+                    <td><button type="button" class="btn btn-light">Light</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="row justify-content-center text-center fixed-bottom">
+        <p class="text-secondary">Made with ❤️ by <b><a href="https://www.masipnu.my.id">Masipnu</a></b> in Malang.</p>
+     </div>
+
+{% endblock %}
